@@ -1,0 +1,10 @@
+package com.sun.geekbang.TrainingCamp.week03.mynetty.router;
+
+import java.util.List;
+
+public interface HttpEndpointRouter {
+    
+    String route(List<String> endpoints);
+
+    
+}
