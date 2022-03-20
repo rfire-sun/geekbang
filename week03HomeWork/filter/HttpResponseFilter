@@ -1,0 +1,10 @@
+package com.sun.geekbang.TrainingCamp.week03.mynetty.filter;
+
+import io.netty.handler.codec.http.FullHttpResponse;
+import okhttp3.Response;
+
+public interface HttpResponseFilter {
+
+    void filter(FullHttpResponse response);
+
+}
