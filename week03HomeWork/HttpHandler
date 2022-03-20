@@ -1,0 +1,146 @@
+package com.sun.geekbang.TrainingCamp.week03.mynetty;
+
+import com.sun.geekbang.TrainingCamp.week03.mynetty.filter.HeaderHttpResponseFilter;
+import com.sun.geekbang.TrainingCamp.week03.mynetty.filter.HttpResponseFilter;
+import com.sun.geekbang.TrainingCamp.week03.mynetty.router.HttpEndpointRouter;
+import com.sun.geekbang.TrainingCamp.week03.mynetty.router.RandomHttpEndpointRouter;
+import io.netty.buffer.Unpooled;
+import io.netty.channel.ChannelFutureListener;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.handler.codec.http.DefaultFullHttpResponse;
+import io.netty.handler.codec.http.FullHttpRequest;
+import io.netty.handler.codec.http.FullHttpResponse;
+import io.netty.handler.codec.http.HttpUtil;
+import io.netty.util.ReferenceCountUtil;
+import okhttp3.Call;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import org.apache.commons.io.FileUtils;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+
+import java.io.File;
+import java.util.List;
+import java.util.Objects;
+
+import static io.netty.handler.codec.http.HttpHeaderNames.CONNECTION;
+import static io.netty.handler.codec.http.HttpHeaderValues.KEEP_ALIVE;
+import static io.netty.handler.codec.http.HttpResponseStatus.NO_CONTENT;
+import static io.netty.handler.codec.http.HttpResponseStatus.OK;
+import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
+
+/**
+ *
+ * 事件处理程序接口：ChannelHandler                         两个具体实现各有一个适配器：（空实现，需要继承使用）
+ *       两个具体实现：ChannelOutBoundHandler 出站事件处理        ChannelInboundHandlerAdapter
+ *                  ChannelInBoundHandler  入站事件处理        ChannelOutboundHandlerAdapter
+ */
+public class HttpHandler extends ChannelInboundHandlerAdapter {
+
+    public HttpHandler(){
+
+    }
+    public HttpHandler(List<String> proxyServers){
+        this.proxyServers = proxyServers;
+    }
+
+    // 初始化块 httpClient
+    // router
+    {
+        this.filter = new HeaderHttpResponseFilter();
+        this.client = HttpClients.createDefault();
+        this.router = new RandomHttpEndpointRouter();
+    }
+
+
+    // 监听server
+    private List<String> proxyServers;
+    // 路由
+    private final HttpEndpointRouter router;
+    // http客户端
+    private final CloseableHttpClient client;
+    // 返回过滤器
+    private final HttpResponseFilter filter;
+
+
+    @Override
+    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+        super.channelReadComplete(ctx);
+    }
+
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        try {
+            //logger.info("channelRead流量接口请求开始，时间为{}", startTime);
+            FullHttpRequest fullRequest = (FullHttpRequest) msg;
+
+            String backendUrl = router.route(proxyServers);
+
+            CloseableHttpResponse response = null;
+            HttpGet httpGet = new HttpGet(backendUrl);
+            try {
+                // 执行请求
+                response = client.execute(httpGet);
+//                String content = EntityUtils.toString(response.getEntity(), "UTF-8");
+//                System.out.println(content);
+
+                method(ctx,fullRequest,response);
+
+            } finally {
+                if (response != null) {
+                    response.close();
+                }
+            }
+
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        } finally {
+            ReferenceCountUtil.release(msg);
+        }
+    }
+
+
+    private void method(ChannelHandlerContext ctx,FullHttpRequest fullRequest,CloseableHttpResponse closeableHttpResponse) throws Exception {
+        FullHttpResponse response = null;
+        try {
+
+            byte[] body = EntityUtils.toByteArray(closeableHttpResponse.getEntity());
+
+            response = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(body));
+
+            response.headers().set("Content-Type", "application/json");
+            response.headers().setInt("Content-Length", Integer.parseInt(closeableHttpResponse.getFirstHeader("Content-Length").getValue()));
+
+            filter.filter(response);
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            response = new DefaultFullHttpResponse(HTTP_1_1, NO_CONTENT);
+            exceptionCaught(ctx, e);
+        } finally {
+            if (fullRequest != null) {
+                if (!HttpUtil.isKeepAlive(fullRequest)) {
+                    ctx.write(response).addListener(ChannelFutureListener.CLOSE);
+                } else {
+                    ctx.write(response);
+                }
+            }
+            ctx.flush();
+        }
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        super.exceptionCaught(ctx, cause);
+    }
+}
+
+
