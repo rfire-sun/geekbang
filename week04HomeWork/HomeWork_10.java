@@ -8,8 +8,8 @@ public class HomeWork_10 {
         System.out.println(count);
         AtomicInteger val = new AtomicInteger(0);
 
-        Thread thread=new Thread(() -> {
-            for(int i=0;i<100000;i++){
+        Thread thread = new Thread(() -> {
+            for (int i = 0; i < 100000; i++) {
 //                        increase();
                 val.incrementAndGet();
             }
@@ -17,10 +17,10 @@ public class HomeWork_10 {
         thread.start();
 
         //等待所有累加线程都结束
-        while(Thread.activeCount()>count) {
+        while (Thread.activeCount() > count) {
             Thread.yield();
         }
 
-        System.out.println("获取值"+val);
+        System.out.println("获取值" + val);
     }
 }

@@ -22,30 +22,29 @@ public class HomeWork_2 {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(2);
 
         ExecutorService exec = Executors.newCachedThreadPool();
-        Worker2 worker2 = new Worker2(cyclicBarrier,homeWork);
+        Worker2 worker2 = new Worker2(cyclicBarrier, homeWork);
         exec.submit(worker2);
 
         cyclicBarrier.await();
 
-        System.out.println("获取值："+homeWork.getNum());
+        System.out.println("获取值：" + homeWork.getNum());
 
         exec.shutdown();
     }
 }
 
 
-
-class Worker2 extends Thread{
+class Worker2 extends Thread {
     private final HomeWork homeWork;
     private final CyclicBarrier cyc;
 
-    public Worker2(CyclicBarrier cyc,HomeWork homeWork) {
+    public Worker2(CyclicBarrier cyc, HomeWork homeWork) {
         this.cyc = cyc;
         this.homeWork = homeWork;
     }
 
     @Override
-    public void run(){
+    public void run() {
 
         try {
             Thread.sleep(1000);

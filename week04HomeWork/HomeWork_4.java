@@ -16,8 +16,8 @@ public class HomeWork_4 {
 
         HomeWork_4 lock = new HomeWork_4();
 
-        Thread t1 = new Thread(()->{
-            synchronized (lock){
+        Thread t1 = new Thread(() -> {
+            synchronized (lock) {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -30,12 +30,12 @@ public class HomeWork_4 {
         });
         t1.start();
 
-        synchronized (lock){
+        synchronized (lock) {
             lock.wait();
         }
 
 
-        System.out.println("获取值："+num);
+        System.out.println("获取值：" + num);
 
     }
 

@@ -8,7 +8,7 @@ import java.util.concurrent.FutureTask;
 public class HomeWork_6 {
 
     @Test
-    public void test(){
+    public void test() {
         //第一种方式
         FutureTask<Integer> task = new FutureTask<Integer>(() -> 10);
         new Thread(task).start();

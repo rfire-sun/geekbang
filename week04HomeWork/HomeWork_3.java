@@ -9,7 +9,7 @@ public class HomeWork_3 {
     @Test
     public void test1() throws InterruptedException {
 
-        Thread t1 = new Thread(()->{
+        Thread t1 = new Thread(() -> {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -20,7 +20,7 @@ public class HomeWork_3 {
         t1.start();
         t1.join();
 
-        System.out.println("获取值："+num);
+        System.out.println("获取值：" + num);
 
     }
 

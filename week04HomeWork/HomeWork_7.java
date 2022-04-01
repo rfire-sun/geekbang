@@ -10,10 +10,10 @@ import java.util.concurrent.Future;
 public class HomeWork_7 {
 
     @Test
-    public void test(){
+    public void test() {
         ExecutorService executor = Executors.newCachedThreadPool();
         Future<Integer> result = executor.submit(() -> {
-            Thread.sleep(1000*2);
+            Thread.sleep(1000 * 2);
             return 10;
         });
         executor.shutdown();

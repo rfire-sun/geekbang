@@ -17,32 +17,32 @@ public class HomeWork {
     private Integer num;
 
     @Test
-    public void test1() throws InterruptedException{
+    public void test1() throws InterruptedException {
 
         HomeWork homeWork = new HomeWork();
         final CountDownLatch countDownLatch = new CountDownLatch(1);
-        Worker worker = new Worker(countDownLatch,homeWork);
+        Worker worker = new Worker(countDownLatch, homeWork);
         worker.start();
 
         countDownLatch.await();
 
-        System.out.println("获取值："+homeWork.getNum());
+        System.out.println("获取值：" + homeWork.getNum());
     }
 
 }
 
 
-class Worker extends Thread{
+class Worker extends Thread {
     private final HomeWork homeWork;
     private final CountDownLatch countDownLatch;
 
-    public Worker(CountDownLatch countDownLatch,HomeWork homeWork) {
+    public Worker(CountDownLatch countDownLatch, HomeWork homeWork) {
         this.countDownLatch = countDownLatch;
         this.homeWork = homeWork;
     }
 
     @Override
-    public void run(){
+    public void run() {
 
         try {
             Thread.sleep(1000);
