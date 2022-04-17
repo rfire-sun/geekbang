@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource.druid.first",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.xh.datasource.DynamicDataSourceConfig",
+      "sourceMethod": "firstDataSource()"
+    },
+    {
+      "name": "spring.datasource.druid.second",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.xh.datasource.DynamicDataSourceConfig",
+      "sourceMethod": "secondDataSource()"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
