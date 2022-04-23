@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/springcloud-tcc-master/bank1/bank1.iml" filepath="$PROJECT_DIR$/springcloud-tcc-master/bank1/bank1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-tcc-master/bank2/bank2.iml" filepath="$PROJECT_DIR$/springcloud-tcc-master/bank2/bank2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-tcc-master/springcloud-tcc.iml" filepath="$PROJECT_DIR$/springcloud-tcc-master/springcloud-tcc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/springcloud-tcc-master.iml" filepath="$PROJECT_DIR$/.idea/springcloud-tcc-master.iml" />
+    </modules>
+  </component>
+</project>
