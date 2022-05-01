@@ -18,7 +18,7 @@
 package com.example.demo.proxy;
 
 /**
- * @author lw1243925457
+ * @author suncheng
  */
 public interface RpcClient {
 

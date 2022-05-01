@@ -34,7 +34,7 @@ import org.springframework.stereotype.Component;
 /**
  * Netty Server 启动类
  *
- * @author lw1243925457
+ * @author suncheng
  */
 @Slf4j
 @Component

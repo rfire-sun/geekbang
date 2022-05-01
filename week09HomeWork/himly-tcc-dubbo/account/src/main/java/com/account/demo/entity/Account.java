@@ -22,7 +22,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author lw1243925457
+ * @author suncheng
  */
 @Data
 public class Account implements Serializable {

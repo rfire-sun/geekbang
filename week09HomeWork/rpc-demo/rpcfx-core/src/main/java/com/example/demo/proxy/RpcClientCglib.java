@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.sf.cglib.proxy.Enhancer;
 
 /**
- * @author lw
+ * @author suncheng
  */
 @Slf4j
 public class RpcClientCglib extends RpcProxy implements RpcClient {

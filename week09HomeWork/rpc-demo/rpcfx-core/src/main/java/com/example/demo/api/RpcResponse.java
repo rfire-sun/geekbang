@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * Rpc 自定义响应结果
- * @author lw
+ * @author suncheng
  */
 @Data
 public class RpcResponse {

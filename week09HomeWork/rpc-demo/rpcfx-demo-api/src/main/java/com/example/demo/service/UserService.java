@@ -3,7 +3,7 @@ package com.example.demo.service;
 import com.example.demo.model.User;
 
 /**
- * @author lw
+ * @author suncheng
  */
 public interface UserService {
 

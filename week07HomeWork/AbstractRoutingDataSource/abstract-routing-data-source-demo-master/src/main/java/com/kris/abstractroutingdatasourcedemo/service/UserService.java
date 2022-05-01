@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
- * @author Kairou Zeng
+ * @author suncheng
  */
 @Component
 public class UserService {

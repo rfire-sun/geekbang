@@ -4,7 +4,7 @@ import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 
 /**
- * @author lw
+ * @author suncheng
  */
 public class UserServiceImpl implements UserService {
 

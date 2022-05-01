@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 不使用 spring boot web，启动 netty server 进行监听
  *
- * @author lw
+ * @author suncheng
  */
 @SpringBootApplication
 @Slf4j

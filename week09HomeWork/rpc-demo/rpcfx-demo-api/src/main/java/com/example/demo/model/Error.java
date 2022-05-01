@@ -18,7 +18,7 @@
 package com.example.demo.model;
 
 /**
- * @author lw1243925457
+ * @author suncheng
  */
 public class Error {
 

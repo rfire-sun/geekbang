@@ -30,7 +30,7 @@ public class AccountInfoService extends ServiceImpl<AccountInfoMapper, AccountIn
 
     /**
      * @Description: tcc try操作,@Hmily注解是开启tcc try方法，在注解中指定confirm方法和cancel方法，并且参数一样
-     * @Author:rosh
+     * @author suncheng
      * @date: 2020-10-13
      * @param cardNumber 卡号
      * @param money     金额
@@ -67,7 +67,7 @@ public class AccountInfoService extends ServiceImpl<AccountInfoMapper, AccountIn
 
     /**
      * @Description: tcc confirm
-     * @Author:rosh
+     * @author suncheng
      * @date: 2020-10-13
      * @param cardNumber 卡号
      * @param money 金额
@@ -80,7 +80,7 @@ public class AccountInfoService extends ServiceImpl<AccountInfoMapper, AccountIn
 
     /**
      * @Description: tcc cancel
-     * @Author:rosh
+     * @author suncheng
      * @date: 2020-10-13
      * @param cardNumber 卡号
      * @param money 金额

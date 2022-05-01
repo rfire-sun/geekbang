@@ -22,7 +22,7 @@ import lombok.Data;
 /**
  * Netty 通信的数据格式
  *
- * @author lw1243925457
+ * @author suncheng
  */
 @Data
 public class RpcProtocol {

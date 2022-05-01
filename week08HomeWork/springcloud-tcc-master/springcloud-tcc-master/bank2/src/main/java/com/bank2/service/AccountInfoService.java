@@ -22,7 +22,7 @@ public class AccountInfoService extends ServiceImpl<AccountInfoMapper, AccountIn
 
     /**
      * @Description: tcc try操作
-     * @Author:rosh
+     * @author suncheng
      * @date: 2020-10-13
      * @param cardNumber 卡号
      * @param money      金额
@@ -55,7 +55,7 @@ public class AccountInfoService extends ServiceImpl<AccountInfoMapper, AccountIn
 
     /**
      * @Description: tcc confirm操作
-     * @Author:rosh
+     * @author suncheng
      * @date: 2020-10-13
      * @param cardNumber 卡号
      * @param money 金额
@@ -68,7 +68,7 @@ public class AccountInfoService extends ServiceImpl<AccountInfoMapper, AccountIn
 
     /**
      * @Description: tcc cancel操作
-     * @Author:rosh
+     * @author suncheng
      * @date: 2020-10-13
      * @param cardNumber 卡号
      * @param money 金额

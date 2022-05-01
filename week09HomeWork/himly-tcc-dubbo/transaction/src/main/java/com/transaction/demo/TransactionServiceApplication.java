@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ImportResource;
 
 
 /**
- * @author lw
+ * @author suncheng
  */
 @SpringBootApplication
 @ImportResource({"classpath:spring-dubbo.xml"})

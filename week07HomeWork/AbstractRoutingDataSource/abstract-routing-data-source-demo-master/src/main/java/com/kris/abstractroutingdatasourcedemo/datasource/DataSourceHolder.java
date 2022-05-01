@@ -3,7 +3,7 @@ package com.kris.abstractroutingdatasourcedemo.datasource;
 /**
  * 获取和设置数据源的类
  *
- * @author Kairou Zeng
+ * @author suncheng
  */
 public class DataSourceHolder {
 

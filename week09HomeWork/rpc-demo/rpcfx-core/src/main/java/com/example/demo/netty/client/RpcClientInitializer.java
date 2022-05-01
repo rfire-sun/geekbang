@@ -7,7 +7,7 @@ import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
 
 /**
- * @author lw
+ * @author suncheng
  */
 public class RpcClientInitializer extends ChannelInitializer<SocketChannel> {
 

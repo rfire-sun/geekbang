@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 /**
  * 课程实体类
  *
- * @author Kairou Zeng
+ * @author suncheng
  */
 @Data
 @NoArgsConstructor

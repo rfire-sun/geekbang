@@ -24,7 +24,7 @@ import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author lw1243925457
+ * @author suncheng
  */
 @Mapper
 @Repository

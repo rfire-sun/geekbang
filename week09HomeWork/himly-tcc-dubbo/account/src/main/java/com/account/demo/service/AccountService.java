@@ -21,7 +21,7 @@ import com.account.demo.entity.Account;
 import org.dromara.hmily.annotation.Hmily;
 
 /**
- * @author lw1243925457
+ * @author suncheng
  */
 public interface AccountService {
 

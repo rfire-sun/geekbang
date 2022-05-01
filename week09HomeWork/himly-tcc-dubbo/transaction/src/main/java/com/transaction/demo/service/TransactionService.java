@@ -18,7 +18,7 @@
 package com.transaction.demo.service;
 
 /**
- * @author lw1243925457
+ * @author suncheng
  */
 public interface TransactionService {
 

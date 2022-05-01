@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * Rpc 自定义请求结构
  *
- * @author lw
+ * @author suncheng
  */
 @Data
 public class RpcRequest {

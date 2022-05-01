@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Update;
 /**
  * 
  * 
- * @author rosh
+ * @author suncheng
  */
 @Mapper
 public interface AccountInfoMapper extends BaseMapper<AccountInfoPo> {

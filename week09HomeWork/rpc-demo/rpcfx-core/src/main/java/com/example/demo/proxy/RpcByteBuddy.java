@@ -22,7 +22,7 @@ import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.implementation.InvocationHandlerAdapter;
 
 /**
- * @author lw1243925457
+ * @author suncheng
  */
 public class RpcByteBuddy extends RpcProxy implements RpcClient {
 

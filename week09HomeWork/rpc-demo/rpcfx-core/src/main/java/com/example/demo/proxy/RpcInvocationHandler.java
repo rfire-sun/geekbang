@@ -33,7 +33,7 @@ import java.net.URISyntaxException;
 /**
  * 用于jdk、cglib、buddy
  *
- * @author lw1243925457
+ * @author suncheng
  */
 @Slf4j
 public class RpcInvocationHandler implements InvocationHandler, MethodInterceptor {

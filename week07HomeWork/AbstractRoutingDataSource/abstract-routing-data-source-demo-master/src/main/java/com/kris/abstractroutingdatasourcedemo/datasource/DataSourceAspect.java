@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 定义动态切换数据源的切面
  *
- * @author Kairou Zeng
+ * @author suncheng
  */
 @Slf4j
 @Aspect

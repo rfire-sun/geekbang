@@ -20,7 +20,7 @@ package com.example.demo.proxy;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author lw1243925457
+ * @author suncheng
  */
 class RpcProxy {
 

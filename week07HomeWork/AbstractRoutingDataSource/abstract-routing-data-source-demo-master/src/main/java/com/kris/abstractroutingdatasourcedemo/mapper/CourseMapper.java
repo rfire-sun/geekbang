@@ -5,7 +5,7 @@ import com.kris.abstractroutingdatasourcedemo.entity.Course;
 import java.util.List;
 
 /**
- * @author Kairou Zeng
+ * @author suncheng
  */
 public interface CourseMapper {
 
