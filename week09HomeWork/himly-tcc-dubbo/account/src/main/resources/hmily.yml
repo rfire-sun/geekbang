@@ -27,7 +27,7 @@ hmily:
 repository:
   database:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url : jdbc:mysql://127.0.0.1:3306/hmily?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/hmily?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: root
     maxActive: 20
@@ -76,5 +76,5 @@ metrics:
   host:
   port: 9071
   async: true
-  threadCount : 16
+  threadCount: 16
   jmxConfig:

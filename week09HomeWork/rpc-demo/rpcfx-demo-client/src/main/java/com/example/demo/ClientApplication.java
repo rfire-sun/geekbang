@@ -33,7 +33,7 @@ public class ClientApplication {
             log.info("Clint service invoke Error");
             return;
         }
-        System.out.println(String.format("find order name=%s, user=%d",order.getName(),order.getUserId()));
+        System.out.println(String.format("find order name=%s, user=%d", order.getName(), order.getUserId()));
 
 //        order = orderService.findError();
 //        if (order == null) {

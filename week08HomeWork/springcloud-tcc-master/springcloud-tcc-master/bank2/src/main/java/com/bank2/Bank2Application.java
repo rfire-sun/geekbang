@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 
-
 @SpringBootApplication
 @MapperScan("com.bank2.mapper")
 @EnableFeignClients

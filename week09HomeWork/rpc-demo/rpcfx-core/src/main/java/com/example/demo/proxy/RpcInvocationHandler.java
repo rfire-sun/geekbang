@@ -60,10 +60,11 @@ public class RpcInvocationHandler implements InvocationHandler, MethodIntercepto
     /**
      * 发送请求到服务端
      * 获取结果后序列号成对象，返回
+     *
      * @param service service name
-     * @param method service method
-     * @param params method params
-     * @param url server host
+     * @param method  service method
+     * @param params  method params
+     * @param url     server host
      * @return object
      */
     private Object process(Class<?> service, Method method, Object[] params, String url) {

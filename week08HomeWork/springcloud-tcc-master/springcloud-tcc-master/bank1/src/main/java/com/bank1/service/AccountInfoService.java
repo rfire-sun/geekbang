@@ -29,11 +29,11 @@ public class AccountInfoService extends ServiceImpl<AccountInfoMapper, AccountIn
 
 
     /**
+     * @param cardNumber 卡号
+     * @param money      金额
      * @Description: tcc try操作,@Hmily注解是开启tcc try方法，在注解中指定confirm方法和cancel方法，并且参数一样
      * @author suncheng
      * @date: 2020-10-13
-     * @param cardNumber 卡号
-     * @param money     金额
      */
     @Transactional
     @Hmily(confirmMethod = "confirm", cancelMethod = "cancel")
@@ -66,11 +66,11 @@ public class AccountInfoService extends ServiceImpl<AccountInfoMapper, AccountIn
     }
 
     /**
+     * @param cardNumber 卡号
+     * @param money      金额
      * @Description: tcc confirm
      * @author suncheng
      * @date: 2020-10-13
-     * @param cardNumber 卡号
-     * @param money 金额
      */
     public void confirm(String cardNumber, Integer money) {
         // Do nothing
@@ -79,11 +79,11 @@ public class AccountInfoService extends ServiceImpl<AccountInfoMapper, AccountIn
     }
 
     /**
+     * @param cardNumber 卡号
+     * @param money      金额
      * @Description: tcc cancel
      * @author suncheng
      * @date: 2020-10-13
-     * @param cardNumber 卡号
-     * @param money 金额
      */
     @Transactional
     public void cancel(String cardNumber, Integer money) {

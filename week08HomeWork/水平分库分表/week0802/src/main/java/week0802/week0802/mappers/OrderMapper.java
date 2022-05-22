@@ -14,7 +14,9 @@ import java.util.Map;
 public interface OrderMapper {
 
     void insertOne(Order order);
+
     void delete(Long id);
+
     void update(Order order);
 
     @MapKey("order_id")

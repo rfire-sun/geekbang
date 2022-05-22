@@ -36,6 +36,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     /**
      * 这个注入很关键，这样注入就能进入RPC的切面，没有就报错
+     *
      * @param accountService
      */
     @Autowired(required = false)

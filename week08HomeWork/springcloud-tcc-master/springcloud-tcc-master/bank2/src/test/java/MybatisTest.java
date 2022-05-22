@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes= Bank2Application.class)
+@SpringBootTest(classes = Bank2Application.class)
 public class MybatisTest {
 
 
@@ -16,7 +16,7 @@ public class MybatisTest {
 
 
     @Test
-    public void userServiceTest(){
+    public void userServiceTest() {
 
         int i = accountInfoMapper.addBalance("1", 10);
 

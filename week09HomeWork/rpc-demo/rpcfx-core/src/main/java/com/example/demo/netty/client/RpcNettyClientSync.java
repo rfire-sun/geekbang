@@ -49,15 +49,16 @@ public class RpcNettyClientSync {
         INSTANCE;
         private RpcNettyClientSync instance;
 
-        EnumSingleton(){
+        EnumSingleton() {
             instance = new RpcNettyClientSync();
         }
-        public RpcNettyClientSync getSingleton(){
+
+        public RpcNettyClientSync getSingleton() {
             return instance;
         }
     }
 
-    public static RpcNettyClientSync getInstance(){
+    public static RpcNettyClientSync getInstance() {
         return EnumSingleton.INSTANCE.getSingleton();
     }
 
@@ -72,6 +73,7 @@ public class RpcNettyClientSync {
 
     /**
      * 调用channel发送请求，从handler中获取响应结果
+     *
      * @return 响应
      * @throws InterruptedException exception
      */
@@ -118,8 +120,9 @@ public class RpcNettyClientSync {
 
     /**
      * 返回新的Channel
+     *
      * @param address ip地址
-     * @param port 端口
+     * @param port    端口
      * @return channel
      * @throws InterruptedException exception
      */
@@ -137,6 +140,7 @@ public class RpcNettyClientSync {
 
     /**
      * 将 {@RpcRequest} 转成 netty 自定义的通信格式 {@RpcProtocol}
+     *
      * @param rpcRequest RpcRequest
      * @return RpcProtocol
      */

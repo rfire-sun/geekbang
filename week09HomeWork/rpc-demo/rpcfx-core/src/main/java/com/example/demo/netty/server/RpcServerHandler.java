@@ -41,7 +41,7 @@ public class RpcServerHandler extends SimpleChannelInboundHandler<RpcProtocol> {
 
     private ApplicationContext applicationContext;
 
-    RpcServerHandler(ApplicationContext applicationContext){
+    RpcServerHandler(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
     }
 
@@ -71,6 +71,7 @@ public class RpcServerHandler extends SimpleChannelInboundHandler<RpcProtocol> {
 
     /**
      * 获取接口实现对应的bean，反射调用方法，返回结果
+     *
      * @param request rpc request
      * @return result
      */
@@ -90,7 +91,7 @@ public class RpcServerHandler extends SimpleChannelInboundHandler<RpcProtocol> {
             response.setStatus(true);
             log.info("Server Response serialize to string return");
             return response;
-        } catch ( IllegalAccessException | InvocationTargetException | CustomException e) {
+        } catch (IllegalAccessException | InvocationTargetException | CustomException e) {
             e.printStackTrace();
             response.setException(e);
             response.setStatus(false);

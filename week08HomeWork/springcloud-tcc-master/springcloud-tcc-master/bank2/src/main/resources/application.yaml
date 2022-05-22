@@ -24,7 +24,7 @@ mybatis-plus:
 
 org:
   dromara:
-    hmily :
+    hmily:
       #序列化
       serializer: kryo
       #rpc超时时间，单位秒

@@ -21,11 +21,11 @@ public class AccountInfoService extends ServiceImpl<AccountInfoMapper, AccountIn
     private TccMapper tccMapper;
 
     /**
+     * @param cardNumber 卡号
+     * @param money      金额
      * @Description: tcc try操作
      * @author suncheng
      * @date: 2020-10-13
-     * @param cardNumber 卡号
-     * @param money      金额
      */
     @Hmily(confirmMethod = "confirm", cancelMethod = "cancel")
     @Transactional
@@ -34,7 +34,7 @@ public class AccountInfoService extends ServiceImpl<AccountInfoMapper, AccountIn
         String transId = HmilyTransactionContextLocal.getInstance().get().getTransId();
         log.warn("AccountInfoService invoke addAccountBalance , transId : {}", transId);
 
-        if (money.equals(250)){
+        if (money.equals(250)) {
             throw new RuntimeException("不能转账250");
         }
 
@@ -54,11 +54,11 @@ public class AccountInfoService extends ServiceImpl<AccountInfoMapper, AccountIn
 
 
     /**
+     * @param cardNumber 卡号
+     * @param money      金额
      * @Description: tcc confirm操作
      * @author suncheng
      * @date: 2020-10-13
-     * @param cardNumber 卡号
-     * @param money 金额
      */
     public void confirm(String cardNumber, Integer money) {
         //获取全局事务ID
@@ -67,11 +67,11 @@ public class AccountInfoService extends ServiceImpl<AccountInfoMapper, AccountIn
     }
 
     /**
+     * @param cardNumber 卡号
+     * @param money      金额
      * @Description: tcc cancel操作
      * @author suncheng
      * @date: 2020-10-13
-     * @param cardNumber 卡号
-     * @param money 金额
      */
     @Transactional
     public void cancel(String cardNumber, Integer money) {

@@ -11,7 +11,7 @@ public class School implements ISchool {
 
     // Resource 
     @Autowired(required = true) //primary
-    Klass class1;
+            Klass class1;
 
     @Resource(name = "student100")
     Student student100;

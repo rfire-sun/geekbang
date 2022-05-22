@@ -32,6 +32,7 @@ public interface AccountMapper {
 
     /**
      * pay for money
+     *
      * @param account account
      */
     @Update("update `himly_dubbo_account` set us_wallet = us_wallet + #{us_wallet}, cny_wallet = cny_wallet + " +
@@ -40,6 +41,7 @@ public interface AccountMapper {
 
     /**
      * query one
+     *
      * @param account account
      * @return account
      */

@@ -25,7 +25,7 @@ public class StarautoconfigApplication {
     }
 
 
-//    // ==== 测试自动配置 ====
+    //    // ==== 测试自动配置 ====
 //    @Autowired
 //    WebInfo info;
 //
@@ -44,7 +44,7 @@ public class StarautoconfigApplication {
     Student student;
 
     @Bean
-    public void printInfo(){
+    public void printInfo() {
 
         System.out.println();
 

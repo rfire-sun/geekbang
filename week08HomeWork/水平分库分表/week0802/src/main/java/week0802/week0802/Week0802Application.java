@@ -13,12 +13,10 @@ import week0802.week0802.models.Order;
 public class Week0802Application {
 
 
-
     public static void main(String[] args) {
         SpringApplication.run(Week0802Application.class, args);
 
     }
-
 
 
 }

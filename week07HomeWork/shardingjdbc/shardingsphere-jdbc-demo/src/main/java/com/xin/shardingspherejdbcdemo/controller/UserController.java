@@ -16,7 +16,7 @@ public class UserController {
 
     @PostMapping("/saveUser")
     public Object saveUser() {
-        return userService.save(new User("张三",  3));
+        return userService.save(new User("张三", 3));
     }
 
     @GetMapping("/listUser")

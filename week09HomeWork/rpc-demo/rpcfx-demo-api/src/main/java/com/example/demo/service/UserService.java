@@ -9,6 +9,7 @@ public interface UserService {
 
     /**
      * find by id
+     *
      * @param id id
      * @return user
      */

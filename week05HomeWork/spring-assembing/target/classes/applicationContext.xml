@@ -10,7 +10,7 @@
     <context:component-scan base-package="com.sun.spring"/>
 
 
-<!--    xml配置装配-->
+    <!--    xml配置装配-->
     <bean id="student1"
           class="com.sun.spring.Student">
         <property name="id" value="123"/>
@@ -31,8 +31,8 @@
                 <ref bean="student2"/>
                 <!--                -->
                 <bean class="com.sun.spring.Student">
-                    <property name="name" value="ff" />
-                    <property name="id" value="001" />
+                    <property name="name" value="ff"/>
+                    <property name="id" value="001"/>
                 </bean>
             </list>
         </property>

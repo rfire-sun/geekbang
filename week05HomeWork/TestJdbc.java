@@ -54,11 +54,11 @@ public class TestJdbc {
             }
 
         } catch (Exception e) {
-            if(connection != null) {
+            if (connection != null) {
                 connection.rollback();
             }
             e.printStackTrace();
-        }finally {
+        } finally {
             if (connection != null && !connection.isClosed())
                 connection.close();
             if (dataSource != null && !dataSource.isClosed())
@@ -70,7 +70,7 @@ public class TestJdbc {
     /**
      * 使用prepareStatement 往table1插入一条数据
      */
-    public static int addTable1(String id,String name,int age) {
+    public static int addTable1(String id, String name, int age) {
         int result = -1;
         try {
             HikariDataSource dataSource = getDataSource();

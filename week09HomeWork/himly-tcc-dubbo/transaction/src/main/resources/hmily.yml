@@ -76,5 +76,5 @@ metrics:
   host:
   port: 9091
   async: true
-  threadCount : 16
+  threadCount: 16
   jmxConfig:

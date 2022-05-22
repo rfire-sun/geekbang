@@ -15,12 +15,11 @@ import java.io.Serializable;
 
 @Data
 @Accessors(chain = true)
-public class Student{
+public class Student {
 
 
     private int id;
     private String name;
-
 
 
 }

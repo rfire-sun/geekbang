@@ -10,15 +10,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes= Bank1Application.class)
+@SpringBootTest(classes = Bank1Application.class)
 public class MybatisTest {
 
 
-
-
     @Test
-    public void userServiceTest(){
-
+    public void userServiceTest() {
 
 
     }

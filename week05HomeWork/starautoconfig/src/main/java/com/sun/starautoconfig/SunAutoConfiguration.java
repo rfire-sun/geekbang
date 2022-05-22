@@ -22,17 +22,17 @@ public class SunAutoConfiguration {
     SunConfiguration configuration;
 
     @Bean
-    public Student student(){
+    public Student student() {
         return new Student().setName(properties.getA()).setId(12);
     }
 
     @Bean
-    public Student student100(){
+    public Student student100() {
         return new Student().setName(properties.getB()).setId(12);
     }
 
     @Bean
-    public Klass klass(){
+    public Klass klass() {
 
         Klass klass = new Klass();
         klass.setStudents(Lists.newArrayList(new Student().setName(configuration.name1 + properties.getC())));
@@ -40,7 +40,7 @@ public class SunAutoConfiguration {
     }
 
     @Bean
-    public School school(){
+    public School school() {
         return new School();
     }
 

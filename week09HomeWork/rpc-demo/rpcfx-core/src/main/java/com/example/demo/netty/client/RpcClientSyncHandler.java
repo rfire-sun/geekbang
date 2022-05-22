@@ -12,6 +12,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * 这里使用并发的等待-通知机制来拿到结果
+ *
  * @author suncheng
  */
 @Slf4j
@@ -43,6 +44,7 @@ public class RpcClientSyncHandler extends SimpleChannelInboundHandler<RpcProtoco
 
     /**
      * 锁的初始化
+     *
      * @param latch CountDownLatch
      */
     void setLatch(CountDownLatch latch) {
@@ -51,6 +53,7 @@ public class RpcClientSyncHandler extends SimpleChannelInboundHandler<RpcProtoco
 
     /**
      * 阻塞等待结果后返回
+     *
      * @return 后台服务器响应
      * @throws InterruptedException exception
      */

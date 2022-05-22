@@ -137,7 +137,7 @@ public class TestBatchInsertPerformance {
         long start = System.currentTimeMillis();
         PreparedStatement pStat = connection.prepareStatement("insert into t_user values(?,?,?,?,?)");
 
-        for (int i = 0; i < 100 * 10000 ; i++) {
+        for (int i = 0; i < 100 * 10000; i++) {
 
             pStat.setInt(1, i);
             pStat.setString(2, RandomStringUtils.randomAlphanumeric(8));

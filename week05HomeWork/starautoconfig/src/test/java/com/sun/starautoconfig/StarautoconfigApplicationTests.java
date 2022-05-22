@@ -16,7 +16,7 @@ class StarautoconfigApplicationTests {
     }
 
     @Test
-    public void test(){
+    public void test() {
 
         simpleQuery("select * from table1");
     }

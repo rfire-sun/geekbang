@@ -1,7 +1,6 @@
 package com.xin.shardingspherejdbcdemo.service;
 
 
-
 import com.xin.shardingspherejdbcdemo.entity.User;
 
 import java.util.List;
